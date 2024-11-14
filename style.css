@@ -1,0 +1,134 @@
+@import
+url('https://fonts.googleapis.com/css?family=Bungee');
+
+html {
+    height: 100%;
+    width: 100%;
+}
+
+h1 {
+    z-index: 1;
+    color: white;
+    font-family: 'Bungee', cursive;
+}
+
+body {
+    height: 100vh;
+    overflow: hidden;
+    background: #545454;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+.ball {
+    height: 500px;
+    width: 500px;
+    background: rgb(0, 0, 0);
+    flex-shrink: 0;
+    border: 7px solid #000;
+    border-radius: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    animation: bounce 0.25s infinite alternate;
+
+    .whiteball {
+        height: 350px;
+        width: 350px;
+        background: rgb(15, 15, 15);
+        border: 7px solid #000;
+        border-radius: 100%;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+    }
+
+    div.triangle {
+        width: 250px;
+        height: 250px;
+        background-color: transparent;
+        clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+        background: linear-gradient(90deg, #58b8f9, #0000ff);
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+button {
+    background-color: #000000;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-family: 'Bungee', cursive;
+}
+
+button:hover {
+    background-color: #212121;
+}
+
+#output {
+    color: rgb(255, 255, 255);
+    font-size: .75em;
+    align-items: center;
+    display: flex;
+    z-index: 1;
+    font-family: 'Bungee', cursive;
+}
+
+
+#userQuestionDisplay {
+    color: white;
+    font-size: 1.0em;
+    font-family: 'Bungee', cursive;
+}
+
+#userNameDisplay {
+    color: white;
+    font-size: 1.0em;
+    font-family: 'Bungee', cursive;
+}
+
+
+@keyframes bounce {
+    0%{
+        transform: translateY(40);
+    }
+    100%{
+        transform: translateY(-25px);
+    }
+}
+
+@keyframes shadow{
+    0%{
+        scale: .75;
+    }
+    100%{
+        scale: .9;
+    }
+}
+
+@keyframes slow-bounce {
+    0% { transform: translateY(40px); }
+    100% { transform: translateY(-25px); }
+}
+
+.slow-bouncing {
+    animation: slow-bounce .75s alternate;
+    animation-iteration-count: 1; 
+    animation-fill-mode: center; 
+}
